@@ -1,0 +1,18 @@
+db.users.find({})
+show collections
+show collection
+use mydb
+show dbs
+use admin
+use adming
+use admin
+use admin;
+show dbs
+show collections
+db.createCollection("users");
+show collections
+mydb.createCollection("users")
+use mydb
+show dbs
+use admin;
+show dbs

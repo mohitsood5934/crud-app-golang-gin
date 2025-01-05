@@ -10,3 +10,22 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: admin123
     volumes:
       - ./data:/data/db
+    networks:
+      - app-network
+  goapp:
+    build:
+      context: . # Context is the current directory where your Dockerfile is
+    container_name: go_app
+    ports:
+      - "4000:4000" # Map Go app's port to the host
+    depends_on:
+      - mongodb # Ensure MongoDB starts first
+    environment:
+      - MONGO_URI=mongodb://admin:admin123@mongodb:27017
+    networks:
+      - app-network
+networks:
+  app-network:
+    
+
+

@@ -14,7 +14,7 @@ var client *mongo.Client
 
 // Initialize the MongoDB client and connect to the database
 func InitMongoDB() (*mongo.Client, error) {
-	uri := "mongodb://admin:admin123@127.0.0.1:27017" // Use appropriate URI
+	uri := "mongodb://admin:admin123@mongodb:27017" // Use the service name "mongodb"
 
 	// Create a context with timeout for connecting
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
